@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fetch, Decode, Execute Cycle</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Status: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblStatus">
+          <property name="minimumSize">
+           <size>
+            <width>160</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>160</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Unknown</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Tick: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblTick">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Time per tick: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSlider" name="sliderTimePerTick">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>5000</number>
+          </property>
+          <property name="value">
+           <number>1000</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QGraphicsView" name="graphicsView">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Memory</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tblMemory">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Monospace</family>
+             </font>
+            </property>
+            <row>
+             <property name="text">
+              <string>0x00</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x01</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x02</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x03</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x04</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x05</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x06</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x07</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x08</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x09</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x0A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x0B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x0C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x0D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x0E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x0F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x10</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x11</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x12</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x13</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x14</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x15</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x16</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x17</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x18</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x19</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x1A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x1B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x1C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x1D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x1E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x1F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x20</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x21</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x22</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x23</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x24</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x25</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x26</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x27</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x28</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x29</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x2A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x2B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x2C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x2D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x2E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x2F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x30</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x31</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x32</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x33</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x34</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x35</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x36</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x37</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x38</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x39</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x3A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x3B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x3C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x3D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x3E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x3F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x40</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x41</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x42</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x43</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x44</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x45</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x46</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x47</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x48</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x49</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x4A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x4B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x4C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x4D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x4E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x4F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x50</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x51</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x52</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x53</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x54</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x55</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x56</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x57</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x58</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x59</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x5A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x5B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x5C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x5D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x5E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x5F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x60</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x61</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x62</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x63</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x64</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x65</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x66</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x67</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x68</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x69</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x6A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x6B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x6C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x6D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x6E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x6F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x70</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x71</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x72</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x73</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x74</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x75</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x76</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x77</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x78</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x79</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x7A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x7B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x7C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x7D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x7E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x7F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x80</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x81</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x82</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x83</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x84</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x85</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x86</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x87</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x88</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x89</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x8A</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x8B</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x8C</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x8D</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x8E</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x8F</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>0x90</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Contents</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionLoadProgram"/>
+   <addaction name="actionReloadCode"/>
+   <addaction name="separator"/>
+   <addaction name="actionPlay"/>
+   <addaction name="actionPause"/>
+   <addaction name="actionStep"/>
+   <addaction name="actionStop"/>
+   <addaction name="separator"/>
+   <addaction name="actionInstructions"/>
+   <addaction name="separator"/>
+   <addaction name="actionClose"/>
+  </widget>
+  <action name="actionLoadProgram">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/document-open.png</normaloff>:/icons/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Load Program</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/dialog-close.png</normaloff>:/icons/dialog-close.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/media-playback-stop.png</normaloff>:/icons/media-playback-stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionPlay">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/media-playback-start.png</normaloff>:/icons/media-playback-start.png</iconset>
+   </property>
+   <property name="text">
+    <string>Play</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/media-playback-pause.png</normaloff>:/icons/media-playback-pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+  </action>
+  <action name="actionStep">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/media-skip-forward.png</normaloff>:/icons/media-skip-forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Step</string>
+   </property>
+  </action>
+  <action name="actionInstructions">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/help-contents.png</normaloff>:/icons/help-contents.png</iconset>
+   </property>
+   <property name="text">
+    <string>Instructions</string>
+   </property>
+  </action>
+  <action name="actionReloadCode">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/document-revert.png</normaloff>:/icons/document-revert.png</iconset>
+   </property>
+   <property name="text">
+    <string>Reload Code</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
