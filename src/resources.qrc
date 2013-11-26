@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="document-open.png">../res/icons/document-open.png</file>
+        <file alias="media-playback-pause.png">../res/icons/media-playback-pause.png</file>
+        <file alias="media-playback-start.png">../res/icons/media-playback-start.png</file>
+        <file alias="media-playback-stop.png">../res/icons/media-playback-stop.png</file>
+        <file alias="media-skip-forward.png">../res/icons/media-skip-forward.png</file>
+        <file alias="dialog-close.png">../res/icons/dialog-close.png</file>
+        <file alias="help-contents.png">../res/icons/help-contents.png</file>
+        <file alias="document-revert.png">../res/icons/document-revert.png</file>
+    </qresource>
+</RCC>

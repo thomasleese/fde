@@ -2,9 +2,7 @@
 #include "loadprogramdialogue.h"
 #include "ui_loadprogramdialogue.h"
 
-LoadProgramDialogue::LoadProgramDialogue(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::LoadProgramDialogue) {
+LoadProgramDialogue::LoadProgramDialogue(QWidget *parent) : QDialog(parent), ui(new Ui::LoadProgramDialogue) {
     ui->setupUi(this);
     
     ui->horizontalLayout->addWidget(new InstructionsWidget(this));

@@ -1,9 +1,2 @@
-*.class
-
-# Package Files #
-*.war
-*.ear
-
-*.pro.user
-*-build-*
+build
 

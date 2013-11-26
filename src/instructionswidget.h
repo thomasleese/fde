@@ -4,11 +4,11 @@
 #include <QWidget>
 
 namespace Ui {
-class InstructionsWidget;
+    class InstructionsWidget;
 }
 
-class InstructionsWidget : public QWidget
-{
+class InstructionsWidget : public QWidget {
+
     Q_OBJECT
     
 public:
@@ -17,6 +17,7 @@ public:
     
 private:
     Ui::InstructionsWidget *ui;
+
 };
 
 #endif // INSTRUCTIONSWIDGET_H

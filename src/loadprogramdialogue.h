@@ -22,6 +22,7 @@ private slots:
     
 private:
     Ui::LoadProgramDialogue *ui;
+
 };
 
 #endif // LOADPROGRAMDIALOGUE_H
