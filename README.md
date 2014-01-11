@@ -4,18 +4,17 @@ _A tool for demonstrating the Fetch-Decode-Execute cycle._
 
 ## Building
 
-You should be able to build the project with cmake:
-
-    $ mkdir build
-    $ cd build
-    $ cmake ..
+    $ cd FetchDecodeExecute
+    $ qmake
+    $ make
 
 ## Running
 
 Once built, you should be able to run it like this:
 
-    $ ./build/fde
+    $ ./FetchDecodeExecute
 
-The program runs in full-screen mode as it is designed for classroom use. If you do not want this, you should run it like this:
+By default, the program runs in full-screen mode as it is designed for classroom use. If you do not want this, you should run it like this:
 
-    $ ./build/fde --no-fullscreen
+    $ ./FetchDecodeExecute --no-fullscreen
+
