@@ -20,7 +20,14 @@ ui_*.h
 Makefile*
 build-*
 
-# QtCreator
+# FetchDecodeExecute
 
-*.autosave
+build
 
+# CMake
+
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+install_manifest.txt
