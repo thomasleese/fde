@@ -6,27 +6,40 @@
 const static int WIDTH = 180;
 const static int HEIGHT = 180;
 
+
+class ComponentPrivate {
+public:
+    int hue;
+    bool active;
+    QString name, value;
+};
+
+
 Component::Component(QString name, int x, int y, int hue, QGraphicsItem *parent) :
-    QGraphicsItem(parent) {
+    QGraphicsItem(parent), d(new ComponentPrivate) {
     setPos(x, y);
-    mHue = hue;
-    mName = name;
-    mValue = "NULL";
-    mActive = false;
+    d->hue = hue;
+    d->name = name;
+    d->value = "NULL";
+    d->active = false;
+}
+
+Component::~Component() {
+    delete d;
 }
 
 void Component::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     painter->fillRect(boundingRect(), getColour());
-    
+
     painter->setFont(QFont("Monospace", 16, 200));
     painter->setPen(QColor(Qt::white));
-    painter->drawText(boundingRect().adjusted(4, 4, -4, -HEIGHT / 2), Qt::AlignCenter | Qt::TextWordWrap, mName);
-    
+    painter->drawText(boundingRect().adjusted(4, 4, -4, -HEIGHT / 2), Qt::AlignCenter | Qt::TextWordWrap, d->name);
+
     painter->setFont(QFont("Monospace", 12, 200));
     painter->setPen(QColor(Qt::white));
-    painter->drawText(boundingRect().adjusted(4, HEIGHT / 2, -4, -4), Qt::AlignCenter, mValue);
-    
-    if (mActive) {
+    painter->drawText(boundingRect().adjusted(4, HEIGHT / 2, -4, -4), Qt::AlignCenter, d->value);
+
+    if (d->active) {
         painter->setPen(QPen(QBrush(Qt::black), 4));
         painter->drawRect(boundingRect());
     }
@@ -37,11 +50,11 @@ QRectF Component::boundingRect() const {
 }
 
 QColor Component::getColour() const {
-    return QColor::fromHsl(mHue, 100, 60);
+    return QColor::fromHsl(d->hue, 100, 60);
 }
 
 void Component::setRawValue(QString value) {
-    mValue = value;
+    d->value = value;
     update();
 }
 
@@ -59,7 +72,7 @@ void Component::setHexValue(int value) {
 }
 
 QString Component::getRawValue() const {
-    return mValue;
+    return d->value;
 }
 
 int Component::getDecValue() const {
@@ -71,6 +84,6 @@ int Component::getHexValue() const {
 }
 
 void Component::setActive(bool active) {
-    mActive = active;
+    d->active = active;
     update();
 }
