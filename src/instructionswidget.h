@@ -8,13 +8,12 @@ namespace Ui {
 }
 
 class InstructionsWidget : public QWidget {
-
     Q_OBJECT
-    
+
 public:
     explicit InstructionsWidget(QWidget *parent = 0);
     ~InstructionsWidget();
-    
+
 private:
     Ui::InstructionsWidget *ui;
 
