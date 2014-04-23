@@ -25,13 +25,13 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent), d(new MainWindowPrivate), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    d->alu = new Component("Arithmetic Logic Unit",           0,      0,      0);
-    d->cir = new Component("Current Instruction Register",    110,    0,      50);
-    d->pc = new Component("Program Counter",                  220,    0,      100);
-    d->accumulator = new Component("Accumulator",             0,      110,    150);
-    d->cu = new Component("Control Unit",                     110,    110,    200);
-    d->mar = new Component("Memory Address Register",         220,    110,    250);
-    d->mdr = new Component("Memory Data Register",            0,      220,    300);
+    d->alu = new Component("Arithmetic Logic Unit",        0,   0,   0);
+    d->cir = new Component("Current Instruction Register", 110, 0,   50);
+    d->pc = new Component("Program Counter",               220, 0,   100);
+    d->accumulator = new Component("Accumulator",          0,   110, 150);
+    d->cu = new Component("Control Unit",                  110, 110, 200);
+    d->mar = new Component("Memory Address Register",      220, 110, 250);
+    d->mdr = new Component("Memory Data Register",         0,   220, 300);
 
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->addItem(d->alu);
@@ -139,7 +139,8 @@ void MainWindow::decode1() {
     } else if (op == "stop" || op == "stp") {
         nextTick(SLOT(executeStop1()));
     } else {
-        QMessageBox::critical(this, "Invalid Instruction", op + " is not a recognised operator! Execution stopped.");
+        QString msg = op + " is not a recognised operator! Execution stopped.";
+        QMessageBox::critical(this, "Invalid Instruction", msg);
         on_actionStop_triggered();
     }
 }
@@ -383,10 +384,12 @@ void MainWindow::on_actionPause_triggered() {
 void MainWindow::on_actionInstructions_triggered() {
     InstructionsWidget *widget = new InstructionsWidget();
     widget->show();
-    widget->setGeometry(QStyle::alignedRect(Qt::LeftToRight,
-                                            Qt::AlignCenter,
-                                            widget->size(),
-                                            qApp->desktop()->availableGeometry()));
+
+    QRect rect = QStyle::alignedRect(Qt::LeftToRight,
+                                     Qt::AlignCenter,
+                                     widget->size(),
+                                     qApp->desktop()->availableGeometry());
+    widget->setGeometry(rect);
 }
 
 void MainWindow::on_actionReloadCode_triggered() {

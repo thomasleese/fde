@@ -28,16 +28,19 @@ Component::~Component() {
     delete d;
 }
 
-void Component::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
+void Component::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+                      QWidget *widget) {
     painter->fillRect(boundingRect(), getColour());
 
     painter->setFont(QFont("Monospace", 16, 200));
     painter->setPen(QColor(Qt::white));
-    painter->drawText(boundingRect().adjusted(4, 4, -4, -HEIGHT / 2), Qt::AlignCenter | Qt::TextWordWrap, d->name);
+    painter->drawText(boundingRect().adjusted(4, 4, -4, -HEIGHT / 2),
+                      Qt::AlignCenter | Qt::TextWordWrap, d->name);
 
     painter->setFont(QFont("Monospace", 12, 200));
     painter->setPen(QColor(Qt::white));
-    painter->drawText(boundingRect().adjusted(4, HEIGHT / 2, -4, -4), Qt::AlignCenter, d->value);
+    painter->drawText(boundingRect().adjusted(4, HEIGHT / 2, -4, -4),
+                      Qt::AlignCenter, d->value);
 
     if (d->active) {
         painter->setPen(QPen(QBrush(Qt::black), 4));
