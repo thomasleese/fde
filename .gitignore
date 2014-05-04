@@ -20,10 +20,6 @@ ui_*.h
 Makefile*
 build-*
 
-# FetchDecodeExecute
-
-build
-
 # CMake
 
 CMakeCache.txt
@@ -31,3 +27,4 @@ CMakeFiles
 Makefile
 cmake_install.cmake
 install_manifest.txt
+CMakeLists.txt.user
