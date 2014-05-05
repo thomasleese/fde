@@ -10,6 +10,8 @@ _A tool for demonstrating the Fetch-Decode-Execute cycle._
 
 ## Running
 
+![Main Window Screenshot](/screenshots/screenshot1.png?raw=true)
+
 Once built, you should be able to run it like this (in the `build` directory):
 
     $ ./src/FetchDecodeExecute
